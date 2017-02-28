@@ -1,6 +1,6 @@
 # Laravel 5.3 Photogallery
 
-A Laravel 5.3 Photogallery with lightGallery. 
+A Laravel 5.3 Photogallery with [lightGallery](https://sachinchoolur.github.io/lightGallery/). 
 
 LightGallery is a lightbox gallery plugin for jQuery,the plugin is free for non-commercial projects, for commercial purposes you need a commercial license.
 
