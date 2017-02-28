@@ -29,7 +29,7 @@ class PagesController extends Controller
     {
         $categories = Category::paginate(10);
 		
-		return view('pages.gallery', compact('categories'));
+	return view('pages.gallery', compact('categories'));
     }
 	
 	/**
@@ -41,9 +41,9 @@ class PagesController extends Controller
     {
         $category = Category::where('slug', $slug)->first();
 		
-		$galleries = Gallery::paginate(10);
+	$galleries = Gallery::paginate(10);
 		
-		return view('pages.category', compact('category', 'galleries'));
+	return view('pages.category', compact('category', 'galleries'));
     }
 	
 	/**
@@ -53,11 +53,11 @@ class PagesController extends Controller
      */
     public function album($category_slug, $gallery_slug)
     {
-		$category = Category::where('slug', $category_slug)->first();
+	$category = Category::where('slug', $category_slug)->first();
 		
-		$gallery = Gallery::where('slug', $gallery_slug)->first();
+	$gallery = Gallery::where('slug', $gallery_slug)->first();
 		
-		return view('pages.album', compact('category', 'gallery'));
+	return view('pages.album', compact('category', 'gallery'));
     }
 	
 	/**

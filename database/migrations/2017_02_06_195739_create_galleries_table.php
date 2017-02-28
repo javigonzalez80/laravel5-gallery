@@ -15,15 +15,15 @@ class CreateGalleriesTable extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->increments('id');
-			$table->integer('category_id')->unsigned();
-			$table->string('title');
-			$table->string('slug');
+	    $table->integer('category_id')->unsigned();
+	    $table->string('title');
+	    $table->string('slug');
             $table->timestamps();
 			
-			$table->foreign('category_id')
-				  ->references('id')
-				  ->on('categories')
-				  ->onDelete('cascade');
+	    $table->foreign('category_id')
+		->references('id')
+		->on('categories')
+		->onDelete('cascade');
         });
     }
 

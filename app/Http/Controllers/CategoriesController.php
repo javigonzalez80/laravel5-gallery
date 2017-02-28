@@ -25,7 +25,7 @@ class CategoriesController extends Controller
     {
         $categories = Category::all();
 		
-		return view('categories.index', compact('categories'));
+	return view('categories.index', compact('categories'));
     }
 
     /**
@@ -48,7 +48,7 @@ class CategoriesController extends Controller
     {
         Category::create($request->all());
 		
-		return redirect('admin/categories')->with('flash_message', 'Category has been created!');
+	return redirect('admin/categories')->with('flash_message', 'Category has been created!');
     }
 
     /**
@@ -61,7 +61,7 @@ class CategoriesController extends Controller
     {
         $category = Category::findOrFail($id);
 		
-		return view('categories.show', compact('category'));
+	return view('categories.show', compact('category'));
     }
 
     /**
@@ -74,7 +74,7 @@ class CategoriesController extends Controller
     {
         $category = Category::findOrFail($id);
 		
-		return view('categories.edit', compact('category'));
+	return view('categories.edit', compact('category'));
     }
 
     /**
@@ -88,9 +88,9 @@ class CategoriesController extends Controller
     {
         $category = Category::findOrFail($id);
 		
-		$category->update($request->all());
+	$category->update($request->all());
 		
-		return redirect('admin/categories')->with('flash_message', 'Category has been updated!');
+	return redirect('admin/categories')->with('flash_message', 'Category has been updated!');
     }
 
     /**
@@ -103,8 +103,8 @@ class CategoriesController extends Controller
     {
         $category = Category::findOrFail($id);
 		
-		$category->delete();
+	$category->delete();
 
-		return redirect('admin/categories')->with('flash_message', 'Category has been deleted!');
+	return redirect('admin/categories')->with('flash_message', 'Category has been deleted!');
     }
 }

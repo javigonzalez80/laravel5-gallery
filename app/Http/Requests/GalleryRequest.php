@@ -25,8 +25,8 @@ class GalleryRequest extends FormRequest
     {
         return [
             'category_id' => 'required',
-			'title' => 'required',
-			'slug' => 'required'
+	    'title' => 'required',
+	    'slug' => 'required'
         ];
     }
 }
