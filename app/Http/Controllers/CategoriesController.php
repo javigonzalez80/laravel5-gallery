@@ -25,7 +25,7 @@ class CategoriesController extends Controller
     {
         $categories = Category::all();
 		
-		return view('categories.index', compact('categories'));
+	return view('categories.index', compact('categories'));
     }
 
     /**
