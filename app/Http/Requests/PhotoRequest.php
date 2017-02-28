@@ -25,8 +25,8 @@ class PhotoRequest extends FormRequest
     {
         return [
             'gallery_id' => 'required',
-			'title' => 'required',
-			'image' => 'required|mimes:png,gif,jpeg'
+	    'title' => 'required',
+	    'image' => 'required|mimes:png,gif,jpeg'
         ];
     }
 }
