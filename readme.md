@@ -2,7 +2,7 @@
 
 A Laravel 5.3 Photogallery with [lightGallery](https://sachinchoolur.github.io/lightGallery/). 
 
-LightGallery is a lightbox gallery plugin for jQuery,the plugin is free for non-commercial projects, for commercial purposes you need a commercial license.
+LightGallery is a lightbox gallery plugin for jQuery, the plugin is free for non-commercial projects, for commercial purposes you need a commercial license.
 
 The Gallery has a admin page (url/admin) to create or edit the categories, galleries and photos. A gallery needs a category therefore you need to create a category before you create a gallery.
 
