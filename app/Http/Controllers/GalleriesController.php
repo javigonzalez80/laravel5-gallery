@@ -26,7 +26,7 @@ class GalleriesController extends Controller
     {
         $galleries = Gallery::all();
 		
-		return view('galleries.index', compact('galleries'));
+	return view('galleries.index', compact('galleries'));
     }
 
     /**
@@ -38,7 +38,7 @@ class GalleriesController extends Controller
     {
         $categories = Category::pluck('title', 'id');
 		
-		return view('galleries.create', compact('categories'));
+	return view('galleries.create', compact('categories'));
     }
 
     /**
@@ -51,7 +51,7 @@ class GalleriesController extends Controller
     {
         Gallery::create($request->all());
 		
-		return redirect('admin/galleries')->with('flash_message', 'Gallery has been created!');
+	return redirect('admin/galleries')->with('flash_message', 'Gallery has been created!');
     }
 
     /**
@@ -64,7 +64,7 @@ class GalleriesController extends Controller
     {
         $gallery = Gallery::findOrFail($id);
 		
-		return view('galleries.show', compact('gallery'));
+	return view('galleries.show', compact('gallery'));
     }
 
     /**
@@ -77,9 +77,9 @@ class GalleriesController extends Controller
     {
         $gallery = Gallery::findOrFail($id);
 		
-		$categories = Category::pluck('title', 'id');
+	$categories = Category::pluck('title', 'id');
 		
-		return view('galleries.edit', compact('gallery', 'categories'));
+	return view('galleries.edit', compact('gallery', 'categories'));
     }
 
     /**
@@ -93,9 +93,9 @@ class GalleriesController extends Controller
     {
         $gallery = Gallery::findOrFail($id);
 		
-		$gallery->update($request->all());
+	$gallery->update($request->all());
 		
-		return redirect('admin/galleries')->with('flash_message', 'Gallery has been updated!');
+	return redirect('admin/galleries')->with('flash_message', 'Gallery has been updated!');
     }
 
     /**
@@ -108,8 +108,8 @@ class GalleriesController extends Controller
     {
         $gallery = Gallery::findOrFail($id);
 		
-		$gallery->delete();
+	$gallery->delete();
 
-		return redirect('admin/galleries')->with('flash_message', 'Gallery has been deleted!');
+	return redirect('admin/galleries')->with('flash_message', 'Gallery has been deleted!');
     }
 }
