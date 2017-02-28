@@ -26,7 +26,7 @@ class PhotosController extends Controller
     {
         $photos = Photo::all();
 		
-		return view('photos.index', compact('photos'));
+	return view('photos.index', compact('photos'));
     }
 
     /**
@@ -38,7 +38,7 @@ class PhotosController extends Controller
     {
         $galleries = Gallery::pluck('title', 'id');
 		
-		return view('photos.create', compact('galleries'));
+	return view('photos.create', compact('galleries'));
     }
 
     /**
@@ -50,18 +50,18 @@ class PhotosController extends Controller
     public function store(PhotoRequest $request)
     {
         $photo = new Photo;
-		$photo->gallery_id = $request->get('gallery_id');
-		$photo->title = $request->get('title');
+	$photo->gallery_id = $request->get('gallery_id');
+	$photo->title = $request->get('title');
 		
-		$image = $request->file('image');
-		$destinationPath = public_path().'/img/uploads/';
-		$filename = $image->getClientOriginalName();
-		$request->file('image')->move($destinationPath, $filename);
+	$image = $request->file('image');
+	$destinationPath = public_path().'/img/uploads/';
+	$filename = $image->getClientOriginalName();
+	$request->file('image')->move($destinationPath, $filename);
 		
-		$photo->image = $filename;
-		$photo->save();
+	$photo->image = $filename;
+	$photo->save();
 		
-		return redirect('admin/photos')->with('flash_message', 'Photo has been created!');
+	return redirect('admin/photos')->with('flash_message', 'Photo has been created!');
     }
 
     /**
@@ -74,7 +74,7 @@ class PhotosController extends Controller
     {
         $photo = Photo::findOrFail($id);
 		
-		return view('photos.show', compact('photo'));
+	return view('photos.show', compact('photo'));
     }
 
     /**
@@ -87,9 +87,9 @@ class PhotosController extends Controller
     {
         $photo = Photo::findOrFail($id);
 		
-		$galleries = Gallery::pluck('title', 'id');
+	$galleries = Gallery::pluck('title', 'id');
 		
-		return view('photos.edit', compact('photo', 'galleries'));
+	return view('photos.edit', compact('photo', 'galleries'));
     }
 
     /**
@@ -102,19 +102,19 @@ class PhotosController extends Controller
     public function update(PhotoRequest $request, $id)
     {
         $photo = Photo::findOrFail($id);
-		$photo->gallery_id = $request->get('gallery_id');
-		$photo->title = $request->get('title');
+	$photo->gallery_id = $request->get('gallery_id');
+	$photo->title = $request->get('title');
 		
-		$image = $request->file('image');
-		$destinationPath = public_path().'/img/uploads/';
-		$filename = $image->getClientOriginalName();
-		$request->file('image')->move($destinationPath, $filename);
+	$image = $request->file('image');
+	$destinationPath = public_path().'/img/uploads/';
+	$filename = $image->getClientOriginalName();
+	$request->file('image')->move($destinationPath, $filename);
 		
-		$photo->image = $filename;
-		$photo->save();
+	$photo->image = $filename;
+	$photo->save();
 
 		
-		return redirect('admin/photos')->with('flash_message', 'Photo has been updated!');
+	return redirect('admin/photos')->with('flash_message', 'Photo has been updated!');
     }
 
     /**
@@ -127,8 +127,8 @@ class PhotosController extends Controller
     {
         $photo = Photo::findOrFail($id);
 		
-		$photo->delete();
+	$photo->delete();
 
-		return redirect('admin/photos')->with('flash_message', 'Photo has been deleted!');
+	return redirect('admin/photos')->with('flash_message', 'Photo has been deleted!');
     }
 }
